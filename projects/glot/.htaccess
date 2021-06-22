@@ -1,0 +1,9 @@
+AuthUserFile /afs/cs.stanford.edu/u/optas/.htpasswd
+AuthGroupFile /dev/null
+AuthName "By Secret Password Only"
+AuthType Basic
+<Limit GET>
+ order deny,allow
+ require valid-user
+</Limit>
+

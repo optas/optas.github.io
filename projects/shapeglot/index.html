@@ -1,0 +1,175 @@
+<html>
+<head>
+  <title>ShapeGlot: Learning Language for Shape Differentiation</title>
+  
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <link href='css/paperstyle.css' rel='stylesheet' type='text/css'>
+</head>
+
+
+
+<script>        
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+
+<body>
+
+<div class="pageTitle">
+  ShapeGlot: <br> Learning Language for Shape Differentiation<br> 
+  <div>    
+  <font size="3">in <i>International Conference on Computer Vision</i>, 2019.</font>  
+  </div>
+  <br>
+  <span class = "Authors">
+      <a href="http://ai.stanford.edu/~optas" target="_blank">Panos Achlioptas</a><sup>1</sup> &nbsp; &nbsp;
+      <a href="http://www.judithfan.net" target="_blank">Judy Fan</a><sup>2</sup> &nbsp; &nbsp;
+      <a href="https://rxdhawkins.com" target="_blank">Robert X.D. Hawkins</a><sup>3</sup> &nbsp; &nbsp;<br>
+      <a href="https://cocolab.stanford.edu/ndg.html" target="_blank">Noah D. Goodman</a><sup>1</sup> &nbsp; &nbsp;
+      <a href="https://geometry.stanford.edu/member/guibas/" target="_blank">Leonidas J. Guibas</a><sup>1</sup> &nbsp; &nbsp;<br><br>      
+      <sup>1</sup><a href = "http://www.stanford.edu/" target="_blank"> Stanford University </a> &nbsp; &nbsp;
+      <sup>2</sup><a href = "http://www.ucsd.edu/" target="_blank"> University of California San Diego </a> &nbsp; &nbsp;<br>
+      <sup>3</sup><a href = "http://www.princeton.edu/" target="_blank"> Princeton University </a> <br><br>
+  </span>
+  </div>
+<br>
+
+<div class = "material">
+        <a href="https://arxiv.org/pdf/1905.02925.pdf" target="_blank">[Paper]</a>
+        <a href="resources/iccv_shapeglot_poster.pdf" target="_blank">[Poster]</a> 
+        <a href="resources/paper.bib" target="_blank">[BibTex]</a>
+        <a href="https://forms.gle/2cd4U9zdBH7r9PyTA" target="_blank">[Data]</a>
+        <a href="https://github.com/optas/shapeglot" target="_blank">[Code]</a>
+        <br>        
+</div>
+
+  
+  <div class = "abstractTitle">
+  Abstract
+  </div>
+  <p class = "abstractText">
+  People understand visual objects in terms of parts and their relations. Language for referring to objects can reflect this structure, allowing us to indicate fine-grained <i>shape differences</i>. In this work we focus on grounding referential language in the shape of common objects. We first build a large scale, carefully controlled dataset of human utterances that each refer to a 2D rendering of a 3D CAD model within a set of shape-wise similar alternatives. Using this dataset, we develop neural language understanding and production models that vary in their grounding (pure 3D forms via <i>point-clouds</i> vs. rendered 2D <i>images</i>), the degree of pragmatic reasoning captured (e.g. speakers that reason about a listener or not), and the neural architecture (e.g. with or without attention). We find models that perform well with both synthetic and human partners, and with held out utterances and objects. We also find that these models have surprisingly strong generalization capacity to novel <i>object classes</i> (e.g. transfer from training on chairs to test on lamps), as well as to <i>real</i> images drawn from furniture catalogs. Lesion studies suggest that the neural listeners depend heavily on part-related words and associate these words correctly with visual parts of objects (without any explicit training on object parts), and that transfer to novel classes is most successful when known part-words are available. This work illustrates a practical approach to language grounding, and provides a case study in the relationship between object shape and linguistic structure when it comes to <i>object differentiation.</i></p>
+  </p>
+
+
+  <div class="figureTitle">
+    Listening with 3D Point-Clouds & 2D Images
+  </div>
+  <img class = "bannerImage" src="img/architecture.jpeg"<br>
+  <table align="center"><tr><td>
+    <p class = "figureTitleText">
+              Figure 1. <b>Listening with 3D Point-Clouds & 2D Images.</b>
+              Our listener uses state-of-the-art neural architectures for image-based and point-cloud-based processing to 'mix' geometry with language.
+  </p></td></tr>
+  </table>
+
+  <div class="figureTitle">
+    Pragmatic vs. Literal Neural Speakers
+  </div>
+  <img class = "bannerImage" src="img/pragma_vs_literal_img_and_pc_panel.jpeg"><br>
+  <table align="center"><tr><td><p class = "figureTitleText">
+              Figure 2. <b>Pragmatic vs. Literal Neural Speakers.</b>
+              We develop speakers that reason about a target object with or without the introspection of a neural listener.
+  </p></td></tr></table>
+
+  <div class="figureTitle">
+    Zero-Shot Transfer Learning
+  </div>
+  <img class = "bannerImage" src="img/out_of_class_mixed_pannel.jpeg"><br>
+  <table  align="center"><tr><td><p class = "figureTitleText">
+              Figure 3. <b>Zero-Shot Transfer Learning.</b>
+              Our models can produce referential language for <i>real-world</i> data (top-row), and comprehend human language  for novel <i>object categories</i> (bottom-row), without any training data from these domains.
+
+  </p></td></tr></table>
+
+
+  <div class="figureTitle">
+    More Qualitative Demonstrations
+  </div>
+
+  <table width="800" align="center"><tr><td><p class = "figureTitleText">
+
+  <td>            
+    <div class="dropdown">
+      <button onclick="window.location.href='demos/chair_speaking/html/0.html'" class="dropbtn">Neural-Speaking</button>
+    </div>
+  </td>
+
+
+  <td>
+    <div class="dropdown">
+      <button onclick="window.location.href='demos/chair_listening/html/0.html'" class="dropbtn">Neural-Listening</button>
+    </div>
+  </td>
+
+
+  <td>
+    <div class="dropdown">
+      <button onclick="window.location.href='demos/real_world_chairs/html/0.html'" class="dropbtn">Real-World Chairs</button>
+    </div>
+  </td>
+
+
+  <td>
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">Zero-Shot Classes</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="demos/transfer-learning/bed/html/0.html">Bed<br></a>
+        <a href="demos/transfer-learning/lamp/html/0.html">Lamp<br></a>
+        <a href="demos/transfer-learning/sofa/html/0.html">Sofa<br></a>
+        <a href="demos/transfer-learning/table/html/0.html">Table<br></a>        
+      </div>
+    </div>
+  </td>
+
+
+  
+  <!-- <h2>
+    <div class="dropdown">
+      <button onclick="window.location.href='human_vs_machines/html/0.html'" class="dropbtn">Human vs. Neural Speakers</button>
+    </div>
+  </h2> -->
+
+
+</p></td></tr>
+</table>
+
+  <div class = "abstractTitle", style="margin-top:50px">
+  Acknowledgements
+  </div>  
+  <p class = "ackText">    
+  The authors wish to acknowledge the support of a Sony Stanford Graduate Fellowship, a NSF grant CHS-1528025, a Vannevar Bush Faculty Fellowship and gifts from Autodesk and Amazon Web Services for Machine Learning Research.  
+  </p>
+
+
+</p></td></tr></table>
+
+</p></td></tr>
+</table>
+
+
+
+</p></td></tr></table>
+
+</body></html>
